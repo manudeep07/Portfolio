@@ -105,7 +105,7 @@ const Projects = () => {
                         >
                             <button
                                 onClick={() => setSelectedProject(null)}
-                                className="absolute top-4 right-4 p-2 bg-black/50 rounded-full text-white hover:bg-white hover:text-black transition-colors z-20"
+                                className="fixed top-4 right-4 md:absolute md:top-4 md:right-4 p-3 md:p-2 bg-black/80 md:bg-black/50 rounded-full text-white hover:bg-white hover:text-black transition-colors z-[110]"
                             >
                                 <X size={24} />
                             </button>

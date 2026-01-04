@@ -22,21 +22,28 @@ body {
   min-width: 320px;
   min-height: 100vh;
   @apply bg-background text-primary;
+  overflow-x: hidden;
+  /* Prevent horizontal scroll on mobile */
+  -webkit-tap-highlight-color: transparent;
+  /* Remove tap highlight on mobile */
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
-  background: #0a0a0a; 
+  background: #0a0a0a;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: #333; 
+  background: #333;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
 
 html {
