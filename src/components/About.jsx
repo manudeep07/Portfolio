@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { fadeInUp, fadeIn, slideInLeft, slideInRight } from '../animations/variants';
+import { fadeInUp, staggerContainer } from '../animations/variants';
 import { Code, Terminal, Cpu } from 'lucide-react';
 
 const About = () => {
@@ -10,14 +10,15 @@ const About = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ amount: 0.3 }}
+                    variants={staggerContainer}
                     className="flex flex-col md:flex-row items-center gap-12"
                 >
                     {/* Text Content */}
-                    <motion.div className="md:w-1/2" variants={slideInLeft}>
+                    <motion.div className="md:w-1/2">
                         <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-bold mb-6">
                             About Me
                         </motion.h2>
-                        <motion.div className="w-20 h-1 bg-accent mb-8"></motion.div>
+                        <motion.div variants={fadeInUp} className="w-20 h-1 bg-accent mb-8"></motion.div>
 
                         <motion.p variants={fadeInUp} className="text-gray-400 text-lg leading-relaxed mb-6">
                             I am a passionate MERN Stack Web Developer focused on building scalable and user-friendly web applications. My journey began with curiosity about how the web works, which naturally evolved into full-stack development using the MERN stack.
@@ -36,23 +37,23 @@ const About = () => {
                     </motion.div>
 
                     {/* Visual Content */}
-                    <motion.div className="md:w-1/2 relative" variants={slideInRight}>
+                    <motion.div className="md:w-1/2 relative">
                         <div className="relative z-10 grid grid-cols-2 gap-4">
-                            <div className="bg-card p-6 rounded-2xl border border-gray-800 hover:border-gray-700 transition-colors">
+                            <motion.div variants={fadeInUp} className="bg-card p-6 rounded-2xl border border-gray-800 hover:border-gray-700 transition-colors">
                                 <Code className="text-accent mb-4" size={32} />
                                 <h3 className="font-bold text-lg mb-2">Frontend</h3>
                                 <p className="text-gray-400 text-sm">Crafting responsive and interactive UIs.</p>
-                            </div>
-                            <div className="bg-card p-6 rounded-2xl border border-gray-800 hover:border-gray-700 transition-colors mt-8">
+                            </motion.div>
+                            <motion.div variants={fadeInUp} className="bg-card p-6 rounded-2xl border border-gray-800 hover:border-gray-700 transition-colors mt-8">
                                 <Terminal className="text-purple-500 mb-4" size={32} />
                                 <h3 className="font-bold text-lg mb-2">Backend</h3>
                                 <p className="text-gray-400 text-sm">Building robust APIs and services.</p>
-                            </div>
-                            <div className="bg-card p-6 rounded-2xl border border-gray-800 hover:border-gray-700 transition-colors -mt-8">
+                            </motion.div>
+                            <motion.div variants={fadeInUp} className="bg-card p-6 rounded-2xl border border-gray-800 hover:border-gray-700 transition-colors -mt-8">
                                 <Cpu className="text-green-500 mb-4" size={32} />
                                 <h3 className="font-bold text-lg mb-2">Optimization</h3>
                                 <p className="text-gray-400 text-sm">Ensuring high performance and speed.</p>
-                            </div>
+                            </motion.div>
                         </div>
                         {/* Decorative blob */}
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-accent/20 rounded-full blur-3xl -z-10"></div>

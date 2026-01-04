@@ -28,6 +28,19 @@ body {
   /* Remove tap highlight on mobile */
 }
 
+/* Hardware Acceleration Class to force GPU rendering */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+/* Optimize Blurs */
+.blur-3xl {
+  transform: translateZ(0);
+  /* Force layer creation for update performance */
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

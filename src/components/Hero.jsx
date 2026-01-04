@@ -17,7 +17,7 @@ const Hero = () => {
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ amount: 0.1 }}
-                        className="md:w-1/2"
+                        className="md:w-1/2 gpu-accelerated"
                     >
                         <motion.p variants={fadeInUp} className="text-accent font-medium mb-4 text-lg">
                             Hello, I'm a Web Developer
@@ -79,7 +79,7 @@ const Hero = () => {
                         </motion.div>
 
                         {/* Blob behind image */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-accent/20 rounded-full blur-3xl -z-10"></div>
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-accent/20 rounded-full blur-3xl -z-10 gpu-accelerated"></div>
                     </motion.div>
                 </div>
             </div>

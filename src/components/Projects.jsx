@@ -50,7 +50,7 @@ const Projects = () => {
                     className="max-w-6xl mx-auto"
                 >
                     <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-bold mb-12 text-center">
-                        Selected Work
+                        Projects
                     </motion.h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -59,7 +59,7 @@ const Projects = () => {
                                 key={project.id}
                                 variants={fadeInUp}
                                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
-                                className="group relative cursor-pointer"
+                                className="group relative cursor-pointer gpu-accelerated"
                                 onClick={() => setSelectedProject(project)}
                             >
                                 <div className="relative overflow-hidden rounded-2xl aspect-[4/3] bg-gray-900 border border-gray-800">
@@ -136,9 +136,15 @@ const Projects = () => {
                                 </div>
 
                                 <div className="flex flex-col sm:flex-row gap-4">
-                                    <a href={selectedProject.LiveDemo} className="flex-1 py-3 bg-white text-black font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-gray-200 transition-colors">
-                                        Live Demo <ExternalLink size={18} />
-                                    </a>
+                                    {selectedProject.LiveDemo === '#' ? (
+                                        <button disabled className="flex-1 py-3 bg-gray-700 text-gray-400 font-bold rounded-xl flex items-center justify-center gap-2 cursor-not-allowed">
+                                            Not Live <ExternalLink size={18} />
+                                        </button>
+                                    ) : (
+                                        <a href={selectedProject.LiveDemo} target="_blank" rel="noopener noreferrer" className="flex-1 py-3 bg-white text-black font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-gray-200 transition-colors">
+                                            Live Demo <ExternalLink size={18} />
+                                        </a>
+                                    )}
                                     <a href={selectedProject.SourceCode} className="flex-1 py-3 border border-gray-700 text-white font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-white/5 transition-colors">
                                         Source Code <Github size={18} />
                                     </a>
