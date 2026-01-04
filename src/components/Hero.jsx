@@ -11,9 +11,34 @@ const Hero = () => {
 
     return (
         <section id="home" className="min-h-screen flex items-center pt-20 relative overflow-hidden">
-            {/* Background Elements */}
-            <div className="absolute top-20 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl -z-10 animate-pulse"></div>
-            <div className="absolute bottom-20 left-0 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl -z-10"></div>
+            {/* Background Elements - Optimized */}
+            <motion.div
+                animate={{
+                    scale: [1, 1.2, 1],
+                    opacity: [0.3, 0.5, 0.3]
+                }}
+                transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                }}
+                className="absolute top-20 right-0 w-96 h-96 bg-accent/10 rounded-full blur-2xl -z-10"
+                style={{ willChange: "transform, opacity" }}
+            ></motion.div>
+            <motion.div
+                animate={{
+                    scale: [1, 1.1, 1],
+                    opacity: [0.3, 0.5, 0.3]
+                }}
+                transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 1
+                }}
+                className="absolute bottom-20 left-0 w-72 h-72 bg-blue-500/10 rounded-full blur-2xl -z-10"
+                style={{ willChange: "transform, opacity" }}
+            ></motion.div>
 
             <div className="container mx-auto px-6">
                 <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
@@ -85,7 +110,7 @@ const Hero = () => {
                         </motion.div>
 
                         {/* Blob behind image */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-accent/20 rounded-full blur-3xl -z-10 gpu-accelerated"></div>
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-accent/20 rounded-full blur-2xl -z-10 gpu-accelerated"></div>
                     </motion.div>
                 </div>
             </div>
